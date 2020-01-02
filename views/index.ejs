@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>A simple file uploader incorporating Multer</h1>
+    <%#this is a test message %>
+    <form action="/single" method="post" enctype="multipart/form-data">
+        <label for="name_input">Name</label>
+        <input id="name_input" type="text" name="name" placeholder="enter your name"/>
+        <label for="email_input">Email</label>
+        <input id="email_input" type="email" name="email" placeholder="enter valid email"/>
+        <label for="password_input">Password</label>
+        <input id="password_input" type="password" name="password" placeholder="enter password"/>
+        <input type="file" name="profile" />
+        <input type="submit">
+      </form>
+      <% for (let i=0;i<dust.length; i++){%>
+        <img src='<%=dust[i]%>'> 
+      <%}%>
+</body>
+</html>

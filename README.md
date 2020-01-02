@@ -1,5 +1,9 @@
 # multer-demo-menstack
-A short demo application for adding a files to a remote server.
+A short demo application for adding files to a remote server.
+Users can create user and upload a profile picture. 
+
+Additional Features: 
+Application for creating gallery of image files. 
 
 Original Code references: 
 https://www.npmjs.com/package/multer

@@ -4,7 +4,6 @@ const port = 3000;
 require('./db/db')
 const User = require('./models/user')
 
-
 //multer content used in implementation
 const fs = require('fs'); // << node js module which allows access to local files for reading/writing files
 const multer = require('multer'); // the node js module that writes a file/files object to the express request.
@@ -18,8 +17,7 @@ const storage = multer.diskStorage({
             //filepath is the file location (type: string) - currently in global scope. 
             const localpath = filepath.split('/').map((dir,i)=>{if(i>0){return "/"+dir;}}).join('');
             cb(null, './public'+localpath);
-            //what is cb? - a callback function which accepts error object upon error
-            //the syntax (error, path)
+            //what is cb? - a callback function which accepts error object upon error and a string for where to store the file
         },
 
         //filename property determines the value of the file name to be recorded to our server. 
@@ -61,10 +59,9 @@ function getFilesFromDir (){
 };
 
 //APP-ROUTES
-
 app.get('/', async (req, res) => { 
     try{
-        //find users
+        
         const allUsers = await User.find()
         //DEAD CODE - Earlier test for iterating through files. 
         //call function that gets all of the files via a promise & then render the index page. 
@@ -83,8 +80,6 @@ app.get('/', async (req, res) => {
 
 //upload.single -- the call back middleware function that precedes the request 
 app.post('/single', upload.single('profile'), async (req,res)=>{
-    //'single' - the path for the request triggering the single
-    //'profile' - the body's key for the upload which must match the name of the input
     try{
         const relpath = `${filepath}/${req.file.filename}`
         req.body.imgPath = relpath;

@@ -74,7 +74,6 @@ Since we have defined our location in storage we have more control over where th
         const upload = multer({storage: storage});
         
         //upload is our variable that 'does the magic' -it invokes the storage type (in our example diskStorage, and can also accept several options (such as file filters and other limiters)--not shown here);
-
     ```
 
 
@@ -138,8 +137,11 @@ This method upload.array() allows the form to send multiple files; it takes two 
 
 ## Notes:
 
-Additional Features: Application for creating gallery of image files.
+Future Additional Features: 
+Adding a route and template for programatically creating gallery of image files. 
 
-Original Code references: https://www.npmjs.com/package/multer https://medium.com/@svibhuti22/file-upload-with-multer-in-node-js-and-express-5bc76073419f
+Original Guide references: https://www.npmjs.com/package/multer https://medium.com/@svibhuti22/file-upload-with-multer-in-node-js-and-express-5bc76073419f
 
-Stretch goals - adding image db streaming code references: https://www.settletom.com/blog/uploading-images-to-mongodb-with-multer
+Stretch goals - adding image db streaming code using MongoDb GridFS library: https://www.settletom.com/blog/uploading-images-to-mongodb-with-multer (This uses a few other tools - MongoAtlas - a backend hosting service and react)
+
+Alternative solutions (recommended via stack-overflow) is to setup Amazon S3 Bucket https://medium.com/codebase/using-aws-s3-buckets-in-a-nodejs-app-74da2fc547a6 

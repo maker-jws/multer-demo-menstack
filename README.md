@@ -1,4 +1,4 @@
-# multer-demo-menstack : Adding multer in your Express
+# multer-demo-menstack : adding multer to your Express App
 
 A short demo application for adding files to a remote server. Users can create user and upload a profile picture.
 
@@ -11,8 +11,7 @@ A short demo application for adding files to a remote server. Users can create u
 
 ## Review Code
 
-
-## Explain Multer Components
+### Explain Multer Components
 
 1. **Importing the module from express:** 
     ```javascript
@@ -135,7 +134,8 @@ This is the input form used for initializing the upload.single() method. It is s
     }
     })
 ```
-    This method upload.array() allows the form to send multiple files; it takes two paramaters - the input's name ('profiles') - and a limiter that defines the size of the gallery. This will prevent users from uploading more than 4 files. When the files are created Multer appends an array of objects to the request accessible through req.files.
+This method upload.array() allows the form to send multiple files; it takes two paramaters - the input's name ('profiles') - and a limiter that defines the size of the gallery. This will prevent users from uploading more than 4 files. When the files are created Multer appends an array of objects to the request accessible through req.files.
+
 ## Notes:
 
 Additional Features: Application for creating gallery of image files.

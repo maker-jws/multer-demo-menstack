@@ -6,6 +6,8 @@ const userSchema = new mongoose.Schema({
     password: String,
     //this should store a location of the file path
     imgPath: String,
+    imgData: String,
+    imgType: String,
 })
 
 const User = mongoose.model('User', userSchema);

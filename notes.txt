@@ -1,0 +1,5 @@
+searching files - referenced from nodejs.org
+
+https://nodejs.org/en/knowledge/file-system/how-to-search-files-and-directories-in-nodejs/
+
+GridFS Tutorial - https://medium.com/@kavitanambissan/uploading-and-retrieving-a-file-from-gridfs-using-multer-958dfc9255e8

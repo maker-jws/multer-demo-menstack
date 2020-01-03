@@ -9,7 +9,8 @@
 <body>
     <h1>A simple file uploader incorporating Multer</h1>
     <%#this is a test message %>
-    <form action="/single" method="post" enctype="multipart/form-data">
+    
+    <form action="/stream" method="post" enctype="multipart/form-data">
         <label for="name_input">Name</label>
         <input id="name_input" type="text" name="name" placeholder="enter your name"/>
         <label for="email_input">Email</label>
@@ -19,8 +20,10 @@
         <input type="file" name="profile" />
         <input type="submit">
       </form>
-      <% for (let i=0;i<dust.length; i++){%>
-        <img src='<%=dust[i]%>'> 
-      <%}%>
+      <ul>
+        <%for(let user of users){%>
+          <li><a href="/<%=user._id%>"><h3><%=user.name%></h3></a></li>
+        <%}%>
+      </ul>
 </body>
 </html>

@@ -102,12 +102,6 @@ app.post('/stream', upload.single('profile'), async (req,res)=>{
         //converts the uploaded file 
         const fileContents = fs.readFileSync(localpath).toString('base64');
         
-        //if you already had access to data from an object 
-        const newTarget = './public'+filepath.substring(1);
-        const date = Date.now();
-        const newFileLocation = `${newTarget}/${date}_${req.file.filename}`
-        const newfile = fs.writeFileSync(newFileLocation,fileContents,'base64')
-        
         //modifying req.body 
         req.body.imgData = `data:${req.file.mimetype};base64, `+fileContents;
         req.body.imgPath = relpath;

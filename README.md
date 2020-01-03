@@ -62,13 +62,13 @@ A short demo application for adding files to a remote server. Users can create u
 
     ```
 
-     Storage is an object with a two options destination,filename - determines the location where files will be saved - if nothing is provided the OS default direct for temp files is used. If you do not defined 'storage' multer's default storage option: 
+Storage is an object with a two options destination,filename - determines the location where files will be saved - if nothing is provided the OS default direct for temp files is used. If you do not defined 'storage' multer's default storage option: 
     
     ``` javascript
         const upload = multer({dest:'uploads/'});
     ```
     
-    Since we have defined our location in storage we have more control over where the file is stored on our server. 
+Since we have defined our location in storage we have more control over where the file is stored on our server. 
 
 3. **Defining Upload:** 
     ```javascript
@@ -118,14 +118,14 @@ A short demo application for adding files to a remote server. Users can create u
         <input type="submit">
       </form>
 ```
-    This is the input form used for initializing the upload.single() method. It is similar to our previous experience with input forms, but we will use a type = 'file' to all our browser to accept files. multer will use this form-data and process it into an object -> req.file
+This is the input form used for initializing the upload.single() method. It is similar to our previous experience with input forms, but we will use a type = 'file' to all our browser to accept files. multer will use this form-data and process it into an object -> req.file
 
 ### Uploading multiple files
 ```javascript
     app.post('/bulk', upload.array('profiles', 4),(req,res)=>{
 
     //upload arrays adds an files object in req 
-    
+
     try{
         console.log(req.files.length, 'number of files uploaded')
         res.send(req.files) 

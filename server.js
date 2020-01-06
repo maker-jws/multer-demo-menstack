@@ -61,7 +61,6 @@ function getFilesFromDir (){
 //APP-ROUTES
 app.get('/', async (req, res) => { 
     try{
-        
         const allUsers = await User.find()
         //DEAD CODE - Earlier test for iterating through files. 
         //call function that gets all of the files via a promise & then render the index page. 
@@ -81,8 +80,10 @@ app.get('/', async (req, res) => {
 //upload.single -- the call back middleware function that precedes the request 
 app.post('/single', upload.single('profile'), async (req,res)=>{
     try{
+        console.log(req.file, 'at post route')
         const relpath = `${filepath}/${req.file.filename}`
         req.body.imgPath = relpath;
+        console.log(req.body, 'after updates');
         const createdUser = await User.create(req.body);
         res.redirect(`/${createdUser._id}`);
     }
